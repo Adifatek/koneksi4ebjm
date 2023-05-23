@@ -51,6 +51,7 @@ ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('insert into kustomer values(null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+edt5.Text+'")');
 ZQuery1.ExecSQL ;
 
+
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
