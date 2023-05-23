@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 277
-  Top = 179
+  Left = 320
+  Top = 166
   Width = 662
   Height = 535
   Caption = 'Form1'
@@ -234,14 +234,6 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 10
-  end
-  object btn6: TButton
-    Left = 104
-    Top = 96
-    Width = 75
-    Height = 25
-    Caption = 'btn6'
-    TabOrder = 11
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
