@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 162
-  Top = 139
+  Left = 277
+  Top = 179
   Width = 662
-  Height = 557
+  Height = 535
   Caption = 'Form1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -234,6 +234,14 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 10
+  end
+  object btn6: TButton
+    Left = 104
+    Top = 96
+    Width = 75
+    Height = 25
+    Caption = 'btn6'
+    TabOrder = 11
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
