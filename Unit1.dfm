@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 334
-  Top = 147
-  Width = 708
+  Left = 216
+  Top = 191
+  Width = 681
   Height = 535
   Caption = 'Form1'
   Color = clBtnFace
@@ -11,14 +11,16 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
     Left = 40
     Top = 16
-    Width = 107
+    Width = 115
     Height = 18
-    Caption = 'Nama Kustomer'
+    Caption = 'Nama Kustomer*'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -29,9 +31,9 @@ object Form1: TForm1
   object lbl2: TLabel
     Left = 40
     Top = 56
-    Width = 52
+    Width = 60
     Height = 18
-    Caption = 'Telepon'
+    Caption = 'Telepon*'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -90,6 +92,7 @@ object Form1: TForm1
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object edt1: TEdit
     Left = 200
@@ -234,6 +237,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 10
+    OnClick = btn5Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -244,7 +248,9 @@ object Form1: TForm1
     Database = 'db_lsp'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 'C:\Users\Home-PC\Videos\2023\BAHAN-NGAJAR\Koneksi\libmysql.dll'
+    LibraryLocation = 
+      'C:\Users\Home-PC\Videos\2023\BAHAN-NGAJAR\Koneksi4Ebjm\libmysql.' +
+      'dll'
     Left = 160
     Top = 336
   end
@@ -256,6 +262,30 @@ object Form1: TForm1
     Params = <>
     Left = 96
     Top = 376
+    object ZQuery1idkustomer: TIntegerField
+      FieldName = 'idkustomer'
+      Required = True
+    end
+    object ZQuery1nmkustomer: TStringField
+      FieldName = 'nmkustomer'
+      Size = 30
+    end
+    object ZQuery1telp: TStringField
+      FieldName = 'telp'
+      Size = 18
+    end
+    object ZQuery1alamat: TStringField
+      FieldName = 'alamat'
+      Size = 100
+    end
+    object ZQuery1kota: TStringField
+      FieldName = 'kota'
+      Size = 50
+    end
+    object ZQuery1kodepos: TStringField
+      FieldName = 'kodepos'
+      Size = 40
+    end
   end
   object ds1: TDataSource
     DataSet = ZQuery1
