@@ -120,7 +120,12 @@ end;
 
 procedure TForm1.btn3Click(Sender: TObject);
 begin
-ShowMessage('DATA BERHASIL DIUPDATE!');
+if (edt1.Text= '')or (edt2.Text ='')or(edt3.Text= '')or (edt4.Text ='')or (edt5.Text ='') then
+begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+end else
+begin
+ ShowMessage('DATA BERHASIL DIUPDATE!');
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('Update kustomer set nmkustomer= "'+edt1.Text+'",telp="'+edt2.Text+'" where idkustomer="'+id+'"');
 ZQuery1. ExecSQL;
@@ -130,6 +135,7 @@ ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
 
 posisiawal;
+end; 
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
