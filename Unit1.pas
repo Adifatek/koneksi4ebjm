@@ -109,12 +109,22 @@ end;
 
 procedure TForm1.btn4Click(Sender: TObject);
 begin
-ZQuery1.SQL.Clear;
-ZQuery1.SQL.Add(' delete from kustomer where idkustomer=4');
+if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+ ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add(' delete from kustomer where idkustomer="'+id+'"');
 ZQuery1. ExecSQL;
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('select * from kustomer');
 ZQuery1.Open;
+ShowMessage('DATA BERHASIL DIHAPUS');
+posisiawal;
+end else
+begin
+ ShowMessage('DATA BATAL DIHAPUS');
+ posisiawal;
+end
+
 
 end;
 
@@ -123,6 +133,11 @@ begin
 if (edt1.Text= '')or (edt2.Text ='')or(edt3.Text= '')or (edt4.Text ='')or (edt5.Text ='') then
 begin
   ShowMessage('INPUTAN WAJIB DIISI!');
+end else
+if edt1.Text = ZQuery1.Fields[1].AsString then
+begin
+ ShowMessage('DATA TIDAK ADA PERUBAHAN');
+ posisiawal;
 end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
